@@ -16,7 +16,7 @@ class Vendors(models.Model):
 
 class Order(models.Model):
     order_id = models.BigAutoField(primary_key=True)
-    order_number = models.CharField(max_length=10 ,editable=False, unique=True)
+    order_number = models.CharField(max_length=10, unique=True)
     order_total_cost_without_gst = models.FloatField(default=0)
     order_total_cost_with_gst = models.FloatField(default=0)
     status = (
