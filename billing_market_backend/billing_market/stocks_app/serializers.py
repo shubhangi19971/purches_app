@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Product, GST, Offer,ProductCategory
 
 class ProductSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Product
 

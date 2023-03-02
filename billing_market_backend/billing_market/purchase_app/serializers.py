@@ -2,9 +2,10 @@ from rest_framework import serializers
 from.models import Order, OrderProduct, Vendors
 
 class OrderProductSerializer(serializers.ModelSerializer):
+    order_product_id = serializers.IntegerField(read_only=True)
     class Meta:
         model = OrderProduct
-        fields = '__all__'
+        fields = ['order_product_id','product_order']
     
 
 
@@ -21,7 +22,7 @@ class OrderSerializer(serializers.ModelSerializer):
         print(orderproducts_data)
         order = Order.objects.create(**validated_data)
         for orderproduct_data in orderproducts_data:
-            OrderProduct.objects.create(vendors=order, **orderproduct_data)
+            OrderProduct.objects.create(order=order, **orderproduct_data)
         return order
 
 
