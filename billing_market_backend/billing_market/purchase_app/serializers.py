@@ -19,9 +19,9 @@ class OrderSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
         orderproducts_data = validated_data.pop('products')
-        print(orderproducts_data)
         order = Order.objects.create(**validated_data)
         for orderproduct_data in orderproducts_data:
+            print(orderproduct_data.get('order_product_quantity'))
             OrderProduct.objects.create(order=order, **orderproduct_data)
         return order
 

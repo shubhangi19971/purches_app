@@ -16,6 +16,7 @@ function NavBar() {
         <NavLink className="nav-link active" aria-current="page" to="/user/add">ADD</NavLink>
         <NavLink className="nav-link" to="/user/show">SHOW</NavLink>
         <NavLink className="nav-link" to="/ordershow">ORDERINFO</NavLink>
+        <NavLink className="nav-link" to="/order">ORDER</NavLink>
         <NavLink className="nav-link disabled" to="#" tabindex="-1" aria-disabled="true">Disabled</NavLink>
       </div>
     </div>
